@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Gasoek+One&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Irish+Grover&family=Mystery+Quest&display=swap');
+
+        :root {
+            --primary: #a81319;
+        }
+
+        * {
+            margin: 0;
+            color: #fff;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+
+        }
+
+        body {
+            background: #000;
+            width: 100dvw;
+            height: 100dvh;
+            overflow: hidden;
+            cursor: url('https://i.ibb.co/LghJY5H/1.png'), auto;
+            animation: eclipseBg 4s 1 forwards ease-in-out;
+
+        }
+
+        #content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+        }
+
+        main {
+            width: 100%;
+            height: 98dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+
+
+
+
+        .textBox {
+            text-align: center;
+            max-width: 600px;
+            font-family: "Irish Grover", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: absolute;
+            bottom: 20px;
+            opacity: 0;
+            animation: eclipseTxt 3s 2s 1 forwards cubic-bezier(.9, -0.81, .24, 1.65);
+
+
+        }
+
+        h1 span {
+            transform: scale(0);
+            animation: animateTxt infinite .2s var(--delay) linear alternate;
+        }
+
+
+        h1 span {
+            color: var(--primary);
+        }
+
+        #particles {
+            position: absolute;
+            width: 100dvw;
+            height: 100dvh;
+            z-index: 2;
+        }
+
+
+        @keyframes animateTxt {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+
+        .imgBox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100dvw;
+            height: 100dvw;
+            margin-top: -200px;
+        }
+
+        img {
+
+            max-width: 300px;
+            height: auto;
+            position: absolute;
+            opacity: 0;
+            z-index: 3;
+
+            margin-left: 5px;
+            backdrop-filter: drop-shadow(0, 0, 20px, var(--primary));
+            animation: eclipseIn 2s 2.7s 1 forwards cubic-bezier(.9, -0.81, .24, 1.65);
+
+        }
+
+        .sun {
+            width: 300px;
+            max-width: 500px;
+            height: 300px;
+            max-height: 500px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            position: relative;
+            z-index: 3;
+        }
+
+        .sun:after {
+            width: calc(100% - 10px);
+            height: calc(100% - 10px);
+            border-radius: 50%;
+            background: #000;
+            position: absolute;
+            content: '';
+            z-index: 3;
+            animation: eclipse 4s 1 forwards ease-in-out;
+        }
+
+        @keyframes eclipse {
+            0% {
+                top: 500px;
+                left: -700px;
+                background: #8e8e8e;
+
+            }
+
+            100% {
+                top: 5px;
+                left: 5px;
+                background: #000;
+
+            }
+        }
+
+        @keyframes eclipseBg {
+            0% {
+                background: #e0e0e0;
+            }
+
+            100% {
+                background: #000;
+            }
+        }
+
+        @keyframes eclipseIn {
+            0% {
+                opacity: 0;
+                margin-top: -50px;
+            }
+
+            100% {
+                opacity: 0.7;
+                margin-top: 0;
+            }
+        }
+
+        @keyframes eclipseTxt {
+            0% {
+                opacity: 0;
+                bottom: 200px;
+            }
+
+            100% {
+                opacity: 0.7;
+                bottom: 100px;
+            }
+        }
+
+        .container {
+            text-align: center;
+            position: absolute;
+            top: 50px;
+            width: 100%;
+            z-index: 4;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container span {
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .text1 {
+            color: gray;
+            font-size: 2em;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            margin-bottom: 20px;
+
+            position: relative;
+            animation: text 4s 1 ease-in-out;
+        }
+
+        .text2 {
+            font-size: 2em;
+            letter-spacing: 1em;
+            font-weight: bold;
+            --color: transparent;
+            display: flex;
+            flex-direction: row;
+            text-shadow: none;
+            color: var(--color);
+            animation: text2 1s 2.5s 1 forwards ease-in-out;
+            width: auto;
+            position: relative;
+        }
+
+        .text2 span {
+            color: var(--color);
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            body {
+                font-size: 0.5em;
+            }
+
+        }
+
+        @keyframes text {
+            0% {
+
+                margin-bottom: -50px;
+            }
+
+            30% {
+
+                letter-spacing: 2em;
+                margin-bottom: -50px;
+            }
+
+            80% {
+
+                margin-bottom: -50px;
+            }
+
+            100% {
+                letter-spacing: 0.3em;
+                margin-bottom: 20px;
+            }
+        }
+
+        @keyframes text2 {
+            0% {
+                --color: transparent;
+                text-shadow: none;
+
+
+            }
+
+            99% {
+                --color: transparent;
+                text-shadow: none;
+
+            }
+
+            100% {
+                text-shadow: 0 0 10px #000;
+                --color: var(--primary);
+            }
+        }
+
+
+        .phrase {
+            color: var(--primary);
+        }
+    </style>
+    <title>HACKED BY BLACK MINDS</title>
+</head>
+
+<body>
+    <audio autoplay id="audio">
+        <source src="perdeuBrawl.mp3" type="audio/mp3">
+    </audio>
+    <div id="particles"></div>
+    <div id="content">
+
+        <main>
+            <div class="container">
+                <span class="text1">we are the</span>
+                <div class="text2"></div>
+            </div>
+            <div class="imgBox">
+                <div class="sun"></div>
+                <img src="https://s13.gifyu.com/images/SGYaw.gif" alt="blackminds logo" />
+            </div>
+            <div class="textBox">
+                <h2 class="text"></h2>
+                <h1>COMO VAI ADM? SEU SITE FOI HACKEADO PELA <span style="--delay: 1s"> BLACK MINDS</span></h1>
+                <h2 class="phrase"></h2>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'F12') {
+    e.preventDefault();
+  }
+  if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'I') {
+    e.preventDefault();
+  }
+});
+
+
+
+document.body.addEventListener("click" ,() => {
+
+  const audio = document.getElementById('audio');
+  audio.play();
+})
+
+class TextScramble {
+  constructor(el) {
+    this.el = el;
+    this.chars = '!<>-_\\/[]{}\u2014=+*^?#______@##0101???????????????????';
+    this.update = this.update.bind(this);
+  }
+
+  setText(newText) {
+    const oldText = this.el.innerText;
+    const length = Math.max(oldText.length, newText.length);
+    const promise = new Promise((resolve) => (this.resolve = resolve));
+    this.queue = [];
+
+    for (let i = 0; i < length; i++) {
+      const from = oldText[i] || '';
+      const to = newText[i] || '';
+      const start = Math.floor(Math.random() * 40);
+      const end = start + Math.floor(Math.random() * 40);
+      this.queue.push({ from, to, start, end });
+    }
+
+    cancelAnimationFrame(this.frameRequest);
+    this.frame = 0;
+    this.update();
+
+    return promise;
+  }
+
+  update() {
+    let output = '';
+    let complete = 0;
+
+    for (let i = 0, n = this.queue.length; i < n; i++) {
+      let { from, to, start, end, char } = this.queue[i];
+
+      if (this.frame >= end) {
+        complete++;
+        output += to;
+      } else if (this.frame >= start) {
+        if (!char || Math.random() < 0.28) {
+          char = this.randomChar();
+          this.queue[i].char = char;
+        }
+        output += `<span class=\"dud\">${char}</span>`;
+      } else {
+        output += from;
+      }
+    }
+
+    this.el.innerHTML = output;
+
+    if (complete === this.queue.length) {
+      this.resolve();
+    } else {
+      this.frameRequest = requestAnimationFrame(this.update);
+      this.frame++;
+    }
+  }
+
+  randomChar() {
+    return this.chars[Math.floor(Math.random() * this.chars.length)];
+  }
+}
+
+function startScrambleAnimation(elementSelector, textArray, delay = 800) {
+  const el = document.querySelector(elementSelector);
+  const fx = new TextScramble(el);
+
+  let counter = 0;
+  const next = () => {
+    fx.setText(textArray[counter]).then(() => {
+      setTimeout(next, delay);
+    });
+    counter = (counter + 1) % textArray.length;
+  };
+
+  next();
+}
+
+startScrambleAnimation('.text', ['Osoas', 'Minichild', 'LazBat', 'Kario']);
+startScrambleAnimation('.text2', ['BlackMinds', 'Bl4ckM1ind5', 'MindsBlack']);
+startScrambleAnimation('.phrase', ['VAMOS VARRER SEUS SITES PORCOS DA TERRA!', 'IREMOS ACABAR COM VOCÊS, CANALHAS', 'UM NOVO MUNDO ESTÁ POR VIR', "VIVA BLACK MINDS!"], 1800 );
+
+
+particlesJS("particles", {
+  "particles": {
+    "number": {
+      "value": 80,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#a81319"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 223.91043582566982,
+      "color": "#a81319",
+      "opacity": 1,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 6,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "grab"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 170.0914444003467,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});
+
+    </script>
+</body>
+
+</html>
