@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#HACKED BY VOID</title>
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        body { 
+            background: linear-gradient(135deg, #000000, #1a0033); 
+            color: #00ff00; 
+            font-family: "Courier New", monospace; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center;
+            padding: 2rem;
+        }
+        .container { 
+            background: rgba(0, 0, 0, 0.8); 
+            padding: 3rem; 
+            border-radius: 15px; 
+            border: 2px solid #00ff00; 
+            box-shadow: 0 0 30px #00ff00; 
+            max-width: 600px;
+        }
+        h1 { 
+            color: #ff0000; 
+            font-size: 2.5rem; 
+            margin-bottom: 1rem; 
+            text-shadow: 0 0 10px #ff0000;
+        }
+        h2 { 
+            color: #00ffff; 
+            font-size: 1.8rem; 
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px #00ffff;
+        }
+        p { 
+            font-size: 1.2rem; 
+            margin-bottom: 1.5rem; 
+            line-height: 1.6;
+        }
+        .hacker-text {
+            color: #00ff00;
+            font-size: 1.1rem;
+            margin: 1rem 0;
+        }
+        .telegram-btn { 
+            display: inline-block; 
+            background: linear-gradient(135deg, #0088cc, #00aced); 
+            color: white; 
+            padding: 15px 30px; 
+            font-size: 1.3rem; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            margin-top: 2rem; 
+            transition: all 0.3s ease; 
+            border: 2px solid #00ffff;
+            font-weight: bold;
+        }
+        .telegram-btn:hover { 
+            background: linear-gradient(135deg, #00aced, #0088cc); 
+            transform: scale(1.05); 
+            box-shadow: 0 0 20px #00ffff;
+        }
+        .signature {
+            margin-top: 2rem;
+            color: #ff00ff;
+            font-size: 1.1rem;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+        .warning {
+            margin-top: 2rem; 
+            color: #ffff00; 
+            font-size: 0.9rem;
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="pulse"># HACKED #</h1>
+        <h2>OWNED BY VOID</h2>
+        
+        <p>Solyd infelizmente este lab foi ownado por mim, e eu fiz um bot para fazer a deface para mim automatica, ou seja ngm mais vai ownar a pagina de voces alem de mim. foi mal ai guys tive que desligar meu PC essa noite, logo o exploit parou de funcionar </p>
+        
+        <div class="hacker-text">
+            <strong>🔒 Hacked By void</strong>
+        </div>
+        
+        <div class="hacker-text">
+            <strong>⚠️ Status:</strong> SISTEMA COMPROMETIDO
+        </div>
+        
+        <div class="hacker-text">
+            <strong>💀 Contato:</strong> Fale comigo
+        </div>
+        
+        <p>entre em contato:</p>
+        
+        <a href="https://t.me/v01d_byte" class="telegram-btn" target="_blank">
+            CONTATO NO TELEGRAM
+        </a>
+        
+        <div class="signature">
+            <strong>Hacked by: v01d</strong>
+            <br>
+            <em>Telegram: @v01d_byte</em>
+        </div>
+        
+        <div class="warning">
+            Hackeado!
+        </div>
+    </div>
+
+    <script>
+        // Efeitos interativos para a página de deface
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.container');
+            const title = document.querySelector('h1');
+            
+            // Efeito de digitação no título
+            typeWriter(title, 0);
+            
+            // Efeito de glitch no container
+            setInterval(() => {
+                if (Math.random() > 0.7) {
+                    container.style.transform = 'translateX(' + (Math.random() * 10 - 5) + 'px)';
+                    setTimeout(() => {
+                        container.style.transform = 'translateX(0)';
+                    }, 100);
+                }
+            }, 2000);
+            
+            // Contador de visitas (local)
+            let visits = localStorage.getItem('hack_visits') || 0;
+            visits++;
+            localStorage.setItem('hack_visits', visits);
+            
+            // Mostrar contador
+            const visitCounter = document.createElement('div');
+            visitCounter.style.cssText = 'position: fixed; top: 10px; right: 10px; color: #00ff00; font-size: 12px;';
+            visitCounter.textContent = 'Visitas: ' + visits;
+            document.body.appendChild(visitCounter);
+            
+            // Efeito de partículas (simples)
+            createParticles();
+        });
+
+        function typeWriter(element, speed = 50) {
+            const text = element.textContent;
+            element.textContent = '';
+            let i = 0;
+            
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        function createParticles() {
+            const colors = ['#00ff00', '#ff0000', '#00ffff', '#ff00ff'];
+            
+            setInterval(() => {
+                if (Math.random() > 0.7) {
+                    const particle = document.createElement('div');
+                    particle.style.cssText = `
+                        position: fixed;
+                        width: 2px;
+                        height: 2px;
+                        background: ${colors[Math.floor(Math.random() * colors.length)]};
+                        border-radius: 50%;
+                        pointer-events: none;
+                        z-index: 9999;
+                        left: ${Math.random() * 100}%;
+                        top: ${Math.random() * 100}%;
+                        box-shadow: 0 0 10px currentColor;
+                    `;
+                    document.body.appendChild(particle);
+                    
+                    setTimeout(() => {
+                        particle.remove();
+                    }, 2000);
+                }
+            }, 100);
+        }
+
+        // Efeito no botão do Telegram
+        const telegramBtn = document.querySelector('.telegram-btn');
+        if (telegramBtn) {
+            telegramBtn.addEventListener('mouseenter', function() {
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = 'pulse 0.5s infinite';
+                }, 10);
+            });
+            
+            telegramBtn.addEventListener('mouseleave', function() {
+                this.style.animation = '';
+            });
+        }
+
+        // Mensagem no console
+        console.log('%c 🔥 #HACKED BY VOID 🔥', 'color: #ff0000; font-size: 20px; font-weight: bold;');
+        console.log('%c Sistema comprometido!', 'color: #00ff00; font-size: 14px;');
+    </script>
+</body>
+</html>
